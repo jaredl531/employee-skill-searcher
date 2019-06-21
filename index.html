@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name=viewport content='width=700'>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<link rel="icon" href="https://clarifai.com/cms-assets/favicon.png" type="image/png">
+  <title>Clarifai Employee Skill Searcher</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="showPeople.js"></script>
+  <script type="text/javascript" src="peopleTags.js"></script>
+  <link rel="stylesheet" type="text/css" href="tooltip.css" />
+  <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
+  <script>
+  
+  window.onload = function() {
+	}
+	
+	function performAutoSearch() {
+		if(!document.getElementById('searchTerm').value == '') {
+			document.getElementById('ShowAllButton').click();
+		}
+	}
+  </script>
+  
+  <style type="text/css">
+    body { margin-bottom:10px; height:100% }
+        
+    table.categoryTitle td {
+    	width:200px;
+    }
+    
+    input, textarea {
+  		max-width:90%
+		}	
+		
+    /* Input boxes */
+    input[type="text"] {
+  		display: block;
+  		margin: 0;
+  		/*width: 100%;*/
+  		font-family: sans-serif;
+  		font-size: 28px;
+  		appearance: none;
+  		box-shadow: none;
+  		border-radius: none;
+		}
+		input[type="text"]:focus {
+  		outline: none;
+		}
+		
+		input[type=checkbox] {
+			height:15px;
+			width:20px;
+		}
+		
+		.style-1 input[type="text"] {
+		  padding: 10px;
+		  border: solid 1px #dcdcdc;
+		  transition: box-shadow 0.3s, border 0.3s;
+		}
+		.style-1 input[type="text"]:focus,
+		.style-1 input[type="text"].focus {
+		  border: solid 1px #707070;
+		  box-shadow: 0 0 5px 1px #969696;
+		}
+    
+    ul {
+    	padding-left:0;
+    	list-style-type: none;
+    	display:inline;
+    }
+  	
+  	button:focus {
+    	outline:0;
+    }
+    
+    .uploadButton {
+    	width:150px; 
+    	height:50px; 
+    	font-size:14px; 
+    	border-radius:10px; 
+    	background-color:#e7e7e7;
+    	margin-left:auto;
+    	margin-right:auto;
+    }
+    
+    .searchResults {
+    	margin-top:70px; 
+    	margin-bottom:50px;
+    	display:table;
+    	margin-right: auto;
+  		margin-left: auto;
+    }
+    
+    .footer {
+    	margin-top:50px;
+    	margin-bottom:40px;
+    	font-family:Open Sans,Helvetica Neue;
+    	display:none;
+    }
+    
+    img {
+  		max-width: 100%
+		}	
+    
+  </style>
+</head>
+<body>
+  <div id="Title" style="margin-top:10%; width:100%" align="center"><a href="#" onClick="doAnalysis('clarifai')"><img src="Graphics/top-image-plain.jpg"/></a></div>
+
+  <div id="searchArea" style="margin-top:40px; text-align:center" align="center">
+    <ul class="input-list style-1 clearfix">
+    	<li>
+  			<input id="searchTerm" type="text" size="65%" style="display:inline-block">
+  		</li>
+  	</ul>
+  	
+  	<br/><br/>
+  	 
+  	<button onclick="
+   	  if(document.getElementById('searchTerm').value == '') { 
+   	  	 alert('Please enter a search term!'); 
+   	  	 return;
+   	  } 
+   	  
+   	  doAnalysis(document.getElementById('searchTerm').value, 'no');" id="ShowAllButton" style="width:200px; margin-left:200px;" class="uploadButton">Show Me All The People!</button>
+   	  
+   	  &nbsp; &nbsp; 
+   	  
+  	<button onclick="
+			doAnalysis(document.getElementById('searchTerm').value, 'yes');" style="width:200px" class="uploadButton">I'm Feeling Lucky</button>
+			
+		&nbsp; &nbsp; 
+		
+		<input type="checkbox" id="mentorCheck" name="mentorCheck" onclick="performAutoSearch();"><span style="font-size:16px; font-family: sans-serif;">Filter by mentors </span><img src="Graphics/little-bulb.png"/><img src="Graphics/little-info-button.png" title="This filter will only show people who are willing to teach others how to learn this skill!"/></input>
+			
+		<!--<button onclick="
+			doAnalysis(document.getElementById('searchTerm').value, 'yes');" style="width:200px" class="uploadButton">Play Skill Roulette</button>
+			
+		-->
+
+  </div>
+  
+  <div id="searchResults" class="searchResults" align="center">
+      <div id="resultText" style="font-size:24px; font-family:Open Sans,Helvetica Neue;"></div> 
+    	<table id="ResultsTable" cellpadding="15"></table>
+  </div>
+  
+  <div id="footer" class="footer" align="center">
+  	Made with love using &nbsp;&nbsp;<a href="https://www.clarifai.com" target="_blank"><img src="Graphics/clarifai-logo-small.jpg"/></a>
+  </div>
+  
+</body>
+</html>
