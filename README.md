@@ -47,3 +47,4 @@ Who can teach me to be a "Machine Learning" wizard?
 
 3. **Slack Messages** - The tool is configured to open up a direct Slack message with someobody if you click on their picture, though as mentioned in the previous section, this _does_ require finding everyone's Slack IDs and also your Team ID.
 
+4. **Tooltip Hovering** - If you're curious about all of somebody's skills in the search results you can hover over their picture and a tooltip will tell you: a) Everything they know, and b) What they are willing to mentor in.
