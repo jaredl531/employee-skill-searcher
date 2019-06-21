@@ -1,4 +1,5 @@
 var searchedTerms = [];
+var slackTeamID = "ADD YOUR TEAM'S SLACK ID HERE";
 
 /*
   Purpose: Fill in results table with appropriate models
@@ -121,7 +122,7 @@ function doAnalysis(search, grabRandom) {
 				// format for picture
 				var picName = peopleResults[i].toLowerCase();
 				picName = picName.replace(" ", "-");
-				newCell.innerHTML = "<div id='cellBackground" + i + "' style='background-repeat:no-repeat'><a href='slack://user?team=T0684KNCS&id=" + employeeSlackIDs[peopleResults[i]] + "' style='text-decoration: none; color:black;'><div style='position: relative; left: 0; top: 0;' title='" + peopleResults[i].split(' ')[0] + " knows about " + employeeTags[peopleResults[i]].sort().join(', ').replace(/, (?!.*,)/gmi, ' and ') + "." + (mentorTags.hasOwnProperty(peopleResults[i]) ? '\n\nThey are willing to mentor ' + mentorTags[peopleResults[i]].sort().join(', ').replace(/, (?!.*,)/gmi, ' and ') : '') +  "\'><span style='font-family:calibri;'><img src='Employee-Photos/" + picName + ".jpg' style='position: relative; top: 0; left: 0; z-index:-1' width='300' height='300'\><br/>" + peopleResults[i] + "<br/>" + employeeTitles[peopleResults[i]] + "</font></div></a></div>";
+				newCell.innerHTML = "<div id='cellBackground" + i + "' style='background-repeat:no-repeat'><a href='slack://user?team=" + slackTeamID + "&id=" + employeeSlackIDs[peopleResults[i]] + "' style='text-decoration: none; color:black;'><div style='position: relative; left: 0; top: 0;' title='" + peopleResults[i].split(' ')[0] + " knows about " + employeeTags[peopleResults[i]].sort().join(', ').replace(/, (?!.*,)/gmi, ' and ') + "." + (mentorTags.hasOwnProperty(peopleResults[i]) ? '\n\nThey are willing to mentor ' + mentorTags[peopleResults[i]].sort().join(', ').replace(/, (?!.*,)/gmi, ' and ') : '') +  "\'><span style='font-family:calibri;'><img src='Employee-Photos/" + picName + ".jpg' style='position: relative; top: 0; left: 0; z-index:-1' width='300' height='300'\><br/>" + peopleResults[i] + "<br/>" + employeeTitles[peopleResults[i]] + "</font></div></a></div>";
 				//newCell.innerHTML = "<font face='calibri'><span class='tooltip tooltip-effect-2'><span class='tooltip-item'><a href='slack://user?team=T0684KNCS&id=" + employeeSlackIDs[peopleResults[i]] + "'><img src='https://s3.amazonaws.com/jared-clarifai-stuff/People-Searcher/Employee-Photos/" + picName + ".jpg' width='300' height='300' title=''\></a></span><span class='tooltip-content clearfix'><span class='tooltip-text'>" + peopleResults[i].split(' ')[0] + " also knows about " + employeeTags[peopleResults[i]].sort().join(', ') + "</span></span></span><br/>" + peopleResults[i] + "<br/>" + employeeTitles[peopleResults[i]] + "</font>";
 								
 				// Add Mentorship Badges if applicable
