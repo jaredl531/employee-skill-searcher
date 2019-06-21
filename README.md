@@ -17,7 +17,7 @@ If you want to use this for your own company then there's a few things that you 
 
 1. Replace the photos in the Employee-Photos folder with photos of your own employees. The code is written to read these as first-last.jpg at the moment.
 
-2. Edit all of the dictionaries in peopleTags.js so that they are applicable to your company's staff. The Slack IDs may take some digging to find but I promise you, they are retrievable.
+2. Edit all of the dictionaries in peopleTags.js so that they are applicable to your company's staff. The Slack IDs may take some digging to find but I promise you, they are retrievable. They're also totally mandatory because they're related to feature #3 at the bottom of this README and you don't really need to have that.
 
 3. That's pretty much it.
 
