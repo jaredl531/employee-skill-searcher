@@ -43,7 +43,7 @@ Who can teach me to be a "Machine Learning" wizard?
 
 1. **Mentors** - If you search for a term and it appears in someone's mentorTags dictionary value array, then you'll see a lightbulb appear on that person's picture, indicating that they are indeed a mentor in that subject. You can filter by just mentors by selecting the litle checkbox next to the search bar if you'd like.
 
-2. **Random Search** - If you hit the "I'm Feeling Taggy" button it will first look for an active search term in the box. If a term does exist there, then you'll get one random result of someone who has it in their arsenal. If the box is _blank_ though, then you will get a random person for a random term, which is a lot of fun to just scroll through sometimes.
+2. **Random Search** - If you hit the "I'm Feeling Lucky" button it will first look for an active search term in the box. If a term does exist there, then you'll get one random result of someone who has it in their arsenal. If the box is _blank_ though, then you will get a random person for a random term, which is a lot of fun to just scroll through sometimes.
 
 3. **Slack Messages** - The tool is configured to open up a direct Slack message with someobody if you click on their picture, though as mentioned in the previous section, this _does_ require finding everyone's Slack IDs and also your Team ID.
 
