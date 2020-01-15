@@ -2,7 +2,7 @@
 
 Developed as a hackday project at [Clarifai](https://www.clarifai.com) in early 2019, this is a simple search engine to discover what skills your colleagues have and which people are willing to mentor others in those skills.
 
-A live demo of this can be viewed [here](https://jared-hack-projects.s3.us-east-2.amazonaws.com/employee-skill-searcher/index.html) and an accompanying blog post that mentions this project can be found [here](https://www.clarifai.com/blog/another-march-of-innovation-at-clarifai-hack-day-highlights).
+A live demo of this can be viewed [here](https://jared-hack-projects.s3.us-east-2.amazonaws.com/clarifai-skill-searcher/index.html) and an accompanying blog post that mentions this project can be found [here](https://www.clarifai.com/blog/another-march-of-innovation-at-clarifai-hack-day-highlights).
 <br/><br/>
 
 <img src="https://jared-hack-projects.s3.us-east-2.amazonaws.com/employee-skill-searcher/Screenshots/main-screen1.png"/>
